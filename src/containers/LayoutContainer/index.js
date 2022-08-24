@@ -1,13 +1,14 @@
 import React from "react";
 import { Footer, Header } from "../../common";
+// import styles from "./index.module.sass";
 
 const Layout = ({ children }) => {
   return (
-    <div className="container-fluid">
+    <>
       <Header />
       {children}
-      <Footer />
-    </div>
+      {/* <Footer /> */}
+    </>
   );
 };
 
