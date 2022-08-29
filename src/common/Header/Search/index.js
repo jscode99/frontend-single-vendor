@@ -1,23 +1,17 @@
-import React, { useState } from "react";
+import { useState, useRef } from "react";
 import Grid from "@mui/material/Grid";
 import InputBase from "@mui/material/InputBase";
 import Box from "@mui/material/Box";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+
 import SearchIcon from "@mui/icons-material/Search";
-import CategoryModal from "../../CategoryModal";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+
+import { DialogBox } from "../../";
 
 const Search = () => {
-  const [open, setOpen] = useState(false);
-  const handleModal = () => {
-    setOpen(!open);
-  };
-  console.log(open);
-  const products = [
-    { title: "Product 1" },
-    { title: "Product 2" },
-    { title: "Product 3" },
-    { title: "Product 4" },
-  ];
+  const inputRef = useRef();
+  console.log(inputRef);
+
   return (
     <Grid container height={`100%`} alignItems={`center`}>
       <Box
@@ -31,25 +25,24 @@ const Search = () => {
           justifyContent: "center",
           cursor: "pointer",
         }}
-        onClick={() => {
-          handleModal();
-        }}
+        onClick={() => inputRef.current.handleClickOpen()}
       >
         <ArrowDropDownIcon sx={{ paddingLeft: 1, fontSize: 28 }} />
-        <CategoryModal open={open} handleModal={handleModal} />
+        <DialogBox ref={inputRef} />
       </Box>
       <InputBase
         sx={{
           ml: 1,
           flex: 1,
-          // border: `1 solid blue`,
           backgroundColor: "whitesmoke",
           padding: `0 0 0 16px`,
           height: "40px",
           marginX: 0,
+          // borderStartStartRadius: 25,
+          // borderEndStartRadius: 25,
         }}
         placeholder="Search for products..."
-        inputProps={{ "aria-label": "search google maps" }}
+        inputProps={{ "aria-label": "search for products" }}
       />
       <Box
         sx={{

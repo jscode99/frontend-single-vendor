@@ -1,8 +1,7 @@
-import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
+import InputBase from "@mui/material/InputBase";
 
 const style = {
   position: "absolute",
@@ -20,26 +19,30 @@ export default function CategoryModal({ open, handleModal }) {
   // console.log(open,handleClose);
   return (
     <Modal
-      aria-labelledby="transition-modal-title"
-      aria-describedby="transition-modal-description"
+      aria-labelledby="keep-mounted-modal-title"
+      aria-describedby="keep-mounted-modal-description"
       open={open}
       onClose={handleModal}
-      closeAfterTransition
-      BackdropComponent={Backdrop}
-      BackdropProps={{
-        timeout: 500,
-      }}
+      disableAutoFocus
     >
-      <Fade in={open}>
-        <Box sx={style}>
-          <Typography id="transition-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
-      </Fade>
+      <Box sx={style}>
+        <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
+          Category
+        </Typography>
+        <InputBase
+          sx={{
+            ml: 1,
+            flex: 1,
+            // border: `1 solid blue`,
+            backgroundColor: "whitesmoke",
+            padding: `0 0 0 16px`,
+            height: "40px",
+            marginX: 0,
+          }}
+          placeholder="Search for products..."
+          inputProps={{ "aria-label": "search google maps" }}
+        />
+      </Box>
     </Modal>
   );
 }

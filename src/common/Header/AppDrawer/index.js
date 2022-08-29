@@ -151,7 +151,7 @@ export default function AppDrawer(props) {
           onClick={handleDrawerToggle}
           sx={{ height:'100%' }}
         >
-          <MenuIcon className={styles.menuIcon} />
+          <MenuIcon className={styles.menuIcon} fontSize={`5px`}/>
         </IconButton>
         <Box
           component="nav"
