@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import AppCarousel from "./AppCarousel";
 
 const Landing = () => {
   return (
-    <div>Landing Component</div>
-  )
-}
+    <>
+      <AppCarousel />
+    </>
+  );
+};
 
-export default Landing
+export default Landing;

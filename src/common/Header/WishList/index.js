@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import { Box, Stack } from "@mui/material";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Typography } from "antd";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
-const Account = () => {
+const WishList = () => {
   return (
     <Stack
       direction="row"
       alignItems="center"
-      justifyContent="center"
+      justifyContent="end"
       height="100%"
     >
       <Box sx={{ cursor: "pointer", display: "flex" }}>
-        <AccountCircleIcon
+        <FavoriteBorderIcon
           style={{
             color: "whitesmoke",
             fontWeight: "900",
@@ -25,11 +25,11 @@ const Account = () => {
           variant="h6"
           component="h6"
         >
-          Profile
+          WishList
         </Typography>
       </Box>
     </Stack>
   );
 };
 
-export default Account;
+export default WishList;
