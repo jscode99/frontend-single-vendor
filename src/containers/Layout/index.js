@@ -1,12 +1,17 @@
 import React from "react";
-import { Footer, Header } from "../../common";
-// import styles from "./index.module.sass";
+import { Box } from "@mui/material";
 
-const Layout = ({ children }) => {
+import { Footer, Header, SubHeader, AppCarousel } from "../../common";
+
+import styles from "./index.module.sass";
+
+const Layout = ({ pageName, children }) => {
   return (
     <>
       <Header />
-      {children}
+      <SubHeader />
+      {pageName === "landing" && <AppCarousel />}
+      <Box className={styles.body_container}>{children}</Box>
       <Footer />
     </>
   );

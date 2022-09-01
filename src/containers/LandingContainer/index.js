@@ -4,7 +4,7 @@ import { Landing } from "../../components";
 
 const LandingContainer = () => {
   return (
-    <Layout>
+    <Layout pageName={`landing`}>
       <Landing />
     </Layout>
   );

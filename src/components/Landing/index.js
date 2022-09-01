@@ -1,10 +1,11 @@
 import React from "react";
-import AppCarousel from "./AppCarousel";
+
+import ProductMainFocus from "./ProductMainFocus";
 
 const Landing = () => {
   return (
     <>
-      <AppCarousel />
+      <ProductMainFocus />
     </>
   );
 };
